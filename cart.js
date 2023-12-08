@@ -1,3 +1,9 @@
+function addToCart(itemName, price) {
+  const cart = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+  cart.push({ itemName, price });
+  localStorage.setItem('cartItems', JSON.stringify(cart));
+
+  displayCart();
 function updateTotal() {
     const cart = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
     let totalAmount = 0;
