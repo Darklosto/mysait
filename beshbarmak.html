@@ -10,8 +10,16 @@
   <header>
     <div>
         <h1>Бешбармак</h1>
-        <p>Цена: $<span id="beshbarmakPrice">10.00</span></p>
-        <button onclick="addToCart('Бешбармак', 10)">Добавить в корзину</button>
+         <script>
+      function addToCart(itemName, price) {
+        const cart = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+        cart.push({ itemName, price });
+        localStorage.setItem('cartItems', JSON.stringify(cart));
+        displayCart();
+      }
+    </script>
+    <!-- Кнопка вызывает функцию addToCart -->
+    <button onclick="addToCart('Бешбармак', 10)">Добавить в корзину</button>
       </div>
   </header>
   <nav>
