@@ -6,6 +6,13 @@ function addToCart(itemName, price) {
 }
 
   displayCart();
+
+function cancelItem() {
+  // Реализуйте здесь логику отмены выбранного товара из корзины
+  // Например, удаление элемента из списка или обновление данных в localStorage
+  // После этого обновите отображение корзины вызовом функции displayCart()
+  displayCart();
+}
   
 function updateTotal() {
     const cart = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
